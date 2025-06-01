@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/*目次*/
+/* 共通スタイル */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #222222;
+  max-width: 1200px;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+/* ナビゲーション */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px;
+  background: transparent; /* 背景なし */
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 50px 50px 50px 50px;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #222222; /* 黒文字 */
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #ffd61a;
+}
+
+/* Heroセクション */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; /* 画面いっぱいにする */
+  overflow: hidden;
+
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像を画面いっぱいカバー */
+}
+
+.hero-text {
+  position: absolute;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+}
+
+
+
+
+
+
+.hero {
+  background: url('hero-image.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* セクション共通 */
+.about, .course, .contact {
+  background-color: #fafafa;
+  font-size: 16px;
+  .section-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-image img {
+    max-width: 1200px;
+  }
+}
+
+
+
+/* ABOUT */
+.about{
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 80px;
+
+  }
+  .about p {
+    line-height: 40px; /* 本文だけに行間30px */
+
+  }
+.section-title3{
+  color:#ffd61a;
+  font-size: 24px;
+  margin-top: 60px;
+}
+.section-subtitle{
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+/* Course */
+.course-boxes {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.course-box {
+  background-color: #fafafa;
+  padding: 40px;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* News */
+.news-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.news-item {
+  width: 300px;
+  background:#fafafa;
+  padding: 30px;
+  text-align: left;
+  transition: background-color 0.3s;
+
+}
+.news-img img{
+  width: 300px;
+  height: auto;
+}
+.news-item:hover {
+  background-color: #ffd61a;
+}
+/* Access */
+.content {
+  text-align: center; /* 全部左寄せ */
+  padding: 0 30px;  /* 左右にちょっと余白いれる（好み） */
+  max-width: 1200px;
+  margin: auto/* 中央に寄せたいならこれ*/
+  justify-content: space-between;
+}
+.content iframe {
+  width: 100%;
+  height: 400px; /* 好きな高さにできる */
+  border: none;
+  margin-bottom: 40px;
+}
+
+.content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.access p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Contact */
+.contact-form {
+  background: #fafafa;
+  padding: 60px;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: ＃cacaca0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* 1行ずつ横並びにする */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* labelとinputのサイズ調整 */
+.form-label {
+  width: 240px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.form-input, .form-select, textarea {
+  width: 328px;
+  height: 36px;
+  padding: 8px;
+  border: 1px solid #bfbfbf;
+}
+
+/* チェックボックスのグループ */
+  .checkbox-group {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: flex-start; /* 左揃えにする！ */
+    gap: 24px; /* チェックボックス同士の間を少し空ける（お好みで） */
+
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column; /* 横並び → 縦並び */
+        align-items: flex-start; /* 左寄せにする */
+      }
+
+      .form-label {
+        width: 100%; /* ラベルも全幅に */
+        margin-bottom: 8px; /* ラベルとinputの間に少し余白 */
+      }
+
+      .form-input,
+      .form-select,
+      textarea {
+        width: 100%; /* 入力欄もスマホでは全幅に */
+      }
+
+      .submit-button {
+        width: 100%; /* 送信ボタンも全幅に */
+      }
+    }
+
+  }
+
+
+/* 送信ボタンセンターに */
+.center {
+  justify-content: center;
+}
+
+.submit-button {
+  width: 300px;
+  height: 60px;
+  background-color: #ffd61a;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #ffcc00;
+}
+
+
+
+/* フッター */
+.footer {
+  background-color: #707070;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
